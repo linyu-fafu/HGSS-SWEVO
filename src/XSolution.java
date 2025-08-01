@@ -324,8 +324,8 @@ public class XSolution extends Solution {
 
     public static void main(String[] args) {
         String name = "1";//"01input8";//8,9,10,20,50,70,100,410,500,1000
-        //String fileName = (new File("")).getAbsolutePath() + "/../datas/GEO/" + name + ".txt";
-        String fileName = (new File("")).getAbsolutePath() + "/../datas/ISPD/" + name + ".txt";
+        //String fileName = (new File("")).getAbsolutePath() + "/../instances/GEO/" + name + ".txt";
+        String fileName = (new File("")).getAbsolutePath() + "/../instances/ISPD/" + name + ".txt";
 
         try {
             Problem problem = Problem.readProblem(fileName);

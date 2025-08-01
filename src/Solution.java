@@ -820,49 +820,4 @@ public  class Solution implements Comparable<Solution> {
         }
     }
 
-
-
-
-    public static void main(String[] args) {
-        String name = "input410";//8,9,10,20,50,70,100,410,500,1000
-        String fileName = (new File("")).getAbsolutePath() + "/../datas/GEO/" + name + ".txt";
-        try {
-            Problem problem = Problem.readProblem(fileName);
-            System.out.println(problem);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-        Solution.init();
-        Solution gs = new Solution();
-        int times = 25;
-        int total = 0;
-        for (int t = 0; t < times; t++) {
-            Solution s = new Solution();
-//    		for (int i = 0; i < 10; i++) {
-//    			Solution ns = s.mutation(3);//().hillClimbFlip(); //new Solution();//
-//    			ns = ns.hillClimb();
-//    			//ns = ns.VNS();
-//    			if (ns.cost < s.cost) {
-//    				s = ns;
-//    			}
-//    		}
-            //s = s.hillClimb();
-            //s = s.hillClimbFlip();
-            //s = s.VNS();
-            System.out.println(t + "----" + Problem.get().getRBestCost() + ", " + s.cost + "-->" + s.hillClimbFlip().cost);
-            total += s.cost;
-            if (s.cost < gs.cost) {
-                gs = s;
-            }
-        }
-        System.out.println(Problem.get().getRBestCost() + ", " + gs.cost + "," + total / times);
-        //s.save((new File("")).getAbsolutePath() + "/results/" + name + ".txt");
-        //gs.saveSteiner((new File("")).getAbsolutePath() + "/results/" + name + ".txt");
-        //System.out.println(s.cost + "-" + s.redundantSegments());
-    }
-
-
-
-
 }

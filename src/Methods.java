@@ -318,37 +318,4 @@ public class Methods {
 
     private static Random rand = new Random();
 
-
-    public static void main(String[] args) {
-
-        String name = "01";
-        String fileName = (new File("")).getAbsolutePath() + "\\..\\datas\\ISPD98\\" + name + ".txt";
-
-        try {
-            Problem problem = Problem.readProblem(fileName);
-            System.out.println(problem);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-        double duration = (new java.util.Date()).getTime();
-        final int TIMES = 1;
-        double[] costs = new double[TIMES];
-        double totalCost = 0;
-        Solution bs = null;
-        for (int t = 0; t < TIMES; t++) {
-            Solution s = scatterSearch();
-            System.out.println(t + "\t" + Problem.get().getRBestCost() + ", " + "\t" + Problem.get().getXBestCost() + ", " + s.cost + "," + s.lastImprove);
-            totalCost += s.cost;
-            costs[t] = s.cost;
-            if (bs == null || s.cost < bs.cost) {
-                bs = s;
-            }
-        }
-        duration = (new java.util.Date()).getTime() - duration;
-        duration = Math.round(duration / 1000 * 1000) / 1000.0;
-        System.out.println("\n################# Results #################");
-        System.out.println("bs.cost: " + bs.cost + ", " + "average cost: " + totalCost / TIMES + ", duration: " + duration / TIMES + "s");
-        //bs.saveSteiner((new File("")).getAbsolutePath() + "/results/" + name + ".txt");
-    }
 }

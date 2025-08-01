@@ -11,7 +11,7 @@ public class Simulations {
 
     public static void main(String[] args) {
         String filePath = "";//(new File("")).getAbsolutePath() + "/../";
-        filePath = (new File("")).getAbsolutePath() + "\\..\\datas\\GEO\\";
+        filePath = (new File("")).getAbsolutePath() + "\\..\\instances\\GEO\\";
 
         System.out.println("\n" + Simulations.getParaSetting());
         testPerformance(filePath, Simulations.TIMES);

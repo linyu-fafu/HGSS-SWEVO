@@ -187,17 +187,6 @@ public class Problem {
     	return str;
     }
     
-    public static void main(String[] args) {
-//    	String fileName = (new File("")).getAbsolutePath() + "\\..\\datas\\GEO\\01input8.txt";
-//    	String fileName = (new File("")).getAbsolutePath() + "\\..\\datas\\ISPD98\\10.txt";
-		String fileName = (new File("")).getAbsolutePath() + "\\..\\datas\\ISPD98Modified\\ibm05.modified.txt";
-    	try {
-    	    Problem problem = Problem.readProblem(fileName);
-    	    //System.out.println(problem);
-    	} catch (Exception ex) {
-    		ex.printStackTrace();
-    	}
-     }
 }
 
 class Instance {

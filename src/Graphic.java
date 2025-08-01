@@ -191,49 +191,4 @@ public class Graphic {
         return extra;
     }
 
-    public static void main(String[] args) {
-        String name = "input8";//8,9,10,20,50,70,100,410,500,1000
-        String fileName = (new File("")).getAbsolutePath() + "/../datas/GEO/" + name + ".txt";
-        try {
-            Problem problem = Problem.readProblem(fileName);
-            System.out.println(problem);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-        int nodeNum = Problem.get().getNodeNum();
-        Solution.init();
-        Solution s = new Solution();
-        List<Edge> edges = s.getEdges();
-        for (Edge e : edges) {
-            System.out.println(e.p1 + "->" + e.p2);
-        }
-        int node = 1;
-        for (Edge e : edges) {
-            int n = e.p1;
-            for (int i = 0; i < nodeNum; i++) {
-                if (i == n) continue;
-                boolean in = false;
-                for (Edge e1 : edges) {
-                    if (e1.p1 == n && e1.p2 == i) {
-                        in = true;
-                    }
-                }
-
-                if (!in) {
-                    System.out.println("Add edge: " + n + "->" + i);
-                    Edge e1 = new Edge(n, i, 0);
-                    edges.add(e1);
-                    List<Edge> path = Graphic.findPath(edges, e1, nodeNum);
-                    System.out.println("Path");
-                    for (Edge edge : path) {
-                        System.out.println(edge.p1 + "->" + edge.p2);
-                    }
-                    return;
-                }
-            }
-        }
-    }
-
-
 }
